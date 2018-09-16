@@ -13,6 +13,11 @@ export const createComponent = (tag, className) =>
     className: join(className, props.className)
   })
 
+// is this safe in IE11?
+// const filterUnique = (value, i, self) => self.indexOf(value) === i
+
+const unique = arr => [...new Set(arr)]
+
 export class MDXStyle extends React.Component {
   static defaultProps = {
     components: {
@@ -28,19 +33,20 @@ export class MDXStyle extends React.Component {
       .reduce((a, key) => {
         const style = props.css[key]
         const rule = objectStyle(style)
-        styles.push(rule.css)
+        styles.push(...rule.rules)
         if (key === 'root') {
           const component = createComponent('div', rule.className)
           return { ...a, [key]: component }
         }
-        const base = props.components[key] || key
+        const base = key === 'inlineCode' ? 'code' : props.components[key] || key
         const component = createComponent(base, rule.className)
         return { ...a, [key]: component }
       }, props.components)
 
     return {
       components,
-      styles: styles.join('')
+      // styles: styles.filter(filterUnique).join('')
+      styles: unique(styles).join('')
     }
   }
 

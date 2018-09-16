@@ -14,18 +14,26 @@ export default {
     '--link': blue,
     '--code': blue,
     '--pre': blue,
+    // testing
+    '--bp1': '40em',
   },
   h1: {
     fontSize: '32px',
     lineHeight: 1.25,
     marginTop: '32px',
     marginBottom: '16px',
+    '@media screen and (min-width: var(--bp1))': {
+      fontSize: '48px',
+    }
   },
   h2: {
     fontSize: '24px',
     lineHeight: 1.25,
     marginTop: '32px',
     marginBottom: '16px',
+    '@media screen and (min-width: var(--bp1))': {
+      fontSize: '32px',
+    }
   },
   h3: {
     fontSize: '20px',

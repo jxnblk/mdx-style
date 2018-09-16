@@ -3,47 +3,6 @@ import MDXStyle from '../src'
 import Typography from './typography.mdx'
 import { base } from '../src/themes'
 
-const xtheme = {
-  root: {
-    lineHeight: 1.625,
-    // color: 'purple'
-  },
-  img: {
-    maxWidth: '100%',
-    height: 'auto'
-  },
-  h1: {
-    fontSize: '48px',
-    lineHeight: 1.25,
-    marginTop: '32px',
-    marginBottom: '16px',
-  },
-  h2: {
-    fontSize: '32px',
-    lineHeight: 1.25,
-    marginTop: '32px',
-    marginBottom: '16px',
-    color: 'purple'
-  },
-  code: {
-    fontFamily: 'Menlo, monospace',
-    fontSize: '14px',
-    padding: '16px',
-    marginTop: '32px',
-    marginBottom: '32px',
-    color: '#c0c',
-    backgroundColor: '#f6f6ff',
-    borderRadius: '8px'
-  },
-  inlineCode: {
-    fontFamily: 'Menlo, monospace',
-    fontSize: '14px',
-    color: '#09c'
-  },
-  table: {
-  }
-}
-
 const heading = Tag => ({ id, children, ...props }) =>
   <Tag id={id} {...props}>
     <a
