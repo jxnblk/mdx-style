@@ -14,15 +14,16 @@ export default {
     '--link': blue,
     '--code': blue,
     '--pre': blue,
-    // testing
-    '--bp1': '40em',
+  },
+  a: {
+    color: 'var(--link)'
   },
   h1: {
     fontSize: '32px',
     lineHeight: 1.25,
     marginTop: '32px',
     marginBottom: '16px',
-    '@media screen and (min-width: var(--bp1))': {
+    '@media screen and (min-width:40em)': {
       fontSize: '48px',
     }
   },
@@ -31,7 +32,7 @@ export default {
     lineHeight: 1.25,
     marginTop: '32px',
     marginBottom: '16px',
-    '@media screen and (min-width: var(--bp1))': {
+    '@media screen and (min-width:40em)': {
       fontSize: '32px',
     }
   },
@@ -63,11 +64,38 @@ export default {
     marginTop: '16px',
     marginBottom: '16px',
   },
-  ul: {},
-  ol: {},
-  blockquote: {},
+  ul: {
+    paddingLeft: '16px',
+    marginTop: '16px',
+    marginBottom: '16px',
+  },
+  ol: {
+    paddingLeft: '16px',
+    marginTop: '16px',
+    marginBottom: '16px',
+  },
+  li: {
+    '& > p': {
+      marginTop: 0,
+      marginBottom: 0,
+    },
+    '& > ul': {
+      marginTop: 0,
+      marginBottom: 0,
+    },
+    '& > ol': {
+      marginTop: 0,
+      marginBottom: 0,
+    }
+  },
+  blockquote: {
+    fontSize: '24px',
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: '32px',
+    marginBottom: '32px',
+  },
   // how should these work?
-  // pre: {},
   code: {
     fontFamily: 'Menlo, monospace',
     fontSize: '14px',
@@ -95,7 +123,33 @@ export default {
     backgroundColor: 'var(--gray)'
   },
   table: {
-    '& th': {},
-    '& td': {},
+    width: '100%',
+    marginTop: '32px',
+    marginBottom: '32px',
+    borderCollapse: 'separate',
+    borderSpacing: 0,
+    borderColor: 'var(--gray)',
+    '& th': {
+      textAlign: 'left',
+      verticalAlign: 'bottom',
+      paddingTop: '4px',
+      paddingBottom: '4px',
+      paddingRight: '4px',
+      paddingLeft: 0,
+      borderColor: 'inherit',
+      borderBottomWidth: '2px',
+      borderBottomStyle: 'solid'
+    },
+    '& td': {
+      textAlign: 'left',
+      verticalAlign: 'top',
+      paddingTop: '4px',
+      paddingBottom: '4px',
+      paddingRight: '4px',
+      paddingLeft: 0,
+      borderColor: 'inherit',
+      borderBottomWidth: '1px',
+      borderBottomStyle: 'solid'
+    },
   }
 }
