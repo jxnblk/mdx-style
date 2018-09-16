@@ -1,8 +1,9 @@
 import React from 'react'
 import MDXStyle from '../src'
 import Typography from './typography.mdx'
+import { base } from '../src/themes'
 
-const theme = {
+const xtheme = {
   root: {
     lineHeight: 1.625,
     // color: 'purple'
@@ -67,7 +68,7 @@ export default props =>
     <h1>MDXStyle</h1>
     <MDXStyle
       components={components}
-      css={theme}>
+      css={base}>
       <Typography />
     </MDXStyle>
   </div>

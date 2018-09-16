@@ -15,7 +15,10 @@ export const createComponent = (tag, className) =>
 
 export class MDXStyle extends React.Component {
   static defaultProps = {
-    components: {},
+    components: {
+      pre: props => props.children,
+      code: props => <pre {...props} />
+    },
     css: {}
   }
 
@@ -43,7 +46,9 @@ export class MDXStyle extends React.Component {
 
   render () {
     const {
-      children
+      css,
+      components: _components,
+      ...props
     } = this.props
     const { components, styles } = this.createComponents(this.props)
     const Root = components.root || (props => <div {...props} />)
@@ -56,9 +61,7 @@ export class MDXStyle extends React.Component {
               __html: styles
             }}
           />
-          <Root>
-            {children}
-          </Root>
+          <Root {...props} />
         </React.Fragment>
       </MDXProvider>
     )
