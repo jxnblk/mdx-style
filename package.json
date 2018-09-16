@@ -2,8 +2,9 @@
   "name": "mdx-style",
   "version": "1.0.0-0",
   "description": "Add styles to markdown elements in MDX",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prepare": "babel src -d dist",
     "start": "mdx-go docs",
     "build": "mdx-go build docs -d site",
     "test": "jest"
