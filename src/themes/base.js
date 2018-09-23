@@ -102,6 +102,7 @@ export default {
     padding: '16px',
     marginTop: '32px',
     marginBottom: '32px',
+    overflowX: 'auto',
     color: 'var(--code)',
     backgroundColor: 'var(--lightgray)',
   },
