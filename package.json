@@ -1,33 +1,33 @@
 {
   "name": "mdx-style",
-  "version": "1.0.0-3",
+  "version": "2.0.0-0",
   "description": "Add styles to markdown elements in MDX",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist",
-    "start": "mdx-go docs",
-    "build": "mdx-go build docs -d site",
+    "start": "gx docs",
+    "build": "gx build docs",
     "test": "jest"
   },
   "keywords": [],
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.1",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "jest": "^23.6.0",
-    "mdx-go": "^2.0.0-11",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-test-renderer": "^16.5.1"
+    "jest": "^24.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.9.0"
   },
   "dependencies": {
-    "@mdx-js/tag": "^0.15.0",
-    "object-style": "^1.0.3"
+    "@emotion/core": "^10.0.16",
+    "@mdx-js/react": "^1.3.1",
+    "deepmerge": "^4.0.0",
+    "object-style": "^1.0.3",
+    "theme-ui": "^0.2.35"
   },
   "jest": {
     "testMatch": [

@@ -13,10 +13,10 @@ describe('MDXStyle', () => {
     }).not.toThrow()
   })
 
-  test('renders with css', () => {
+  test('renders with styles', () => {
     const json = renderJSON(
       <MDXStyle
-        css={{
+        styles={{
           root: {
             color: 'tomato'
           },
@@ -28,33 +28,5 @@ describe('MDXStyle', () => {
       </MDXStyle>
     )
     expect(json).toMatchSnapshot()
-  })
-
-  test('adds styles to custom MDX components', () => {
-    const components = {
-      h1: props => <h1 {...props} id='test' />
-    }
-    const Heading = withComponents(({
-      components,
-      ...props
-    }) => {
-      return React.createElement(components.h1, props)
-    })
-    const json = renderJSON(
-      <MDXStyle
-        components={components}
-        css={{
-          h1: {
-            color: 'tomato'
-          }
-        }}>
-        <Heading>Hello</Heading>
-      </MDXStyle>
-    )
-    const [ style, root ] = json
-    const [ h1 ] = root.children
-    expect(h1.props.className).toBeTruthy()
-    expect(h1.props.id).toBe('test')
-    expect(style.props.dangerouslySetInnerHTML.__html).toMatch(/color:tomato/)
   })
 })
