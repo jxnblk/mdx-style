@@ -1,5 +1,5 @@
 import React from 'react'
-import { jsx, ThemeProvider, useThemeUI } from 'theme-ui'
+import { jsx, ThemeProvider, useThemeUI, Styled, } from 'theme-ui'
 import merge from 'deepmerge'
 
 const createStyles = ({
@@ -19,10 +19,12 @@ export const MDXStyle = ({
   fontFamily = 'system-ui, sans-serif',
   monospace = 'Menlo, monospace',
   lineHeight = 1.5,
-  styles,
+  maxWidth = 768,
+  styles = {},
   children,
 }) => {
   const outer = useThemeUI()
+
   const theme = merge({
     fontSizes: headings,
     fonts: {
@@ -39,6 +41,9 @@ export const MDXStyle = ({
     },
     styles: merge({
       root: {
+        fontFamily: 'body',
+        lineHeight: 'body',
+        maxWidth,
       },
       h1: {
         variant: 'text.heading',
@@ -72,7 +77,9 @@ export const MDXStyle = ({
 
   return (
     <ThemeProvider theme={theme}>
-      {children}
+      <Styled.root>
+        {children}
+      </Styled.root>
     </ThemeProvider>
   )
 }

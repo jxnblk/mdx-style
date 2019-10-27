@@ -25,9 +25,7 @@ const components = {
 export default props =>
   <div>
     <h1>MDXStyle</h1>
-    <MDXStyle
-      components={components}
-      css={base}>
+    <MDXStyle>
       <Typography />
     </MDXStyle>
   </div>
